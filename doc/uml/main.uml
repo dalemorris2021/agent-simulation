@@ -2,6 +2,9 @@
 
 class Main {
     - ObservableList<Agent> agents
+    - List<Polygon> obstacles
+    - Circle goal
+    - GlobalObserver observer
     + {static} void main()
 }
 
