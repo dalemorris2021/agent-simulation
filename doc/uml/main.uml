@@ -1,0 +1,8 @@
+@startuml
+
+class Main {
+    - ObservableList<Agent> agents
+    + {static} void main()
+}
+
+@enduml
