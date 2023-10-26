@@ -5,7 +5,11 @@ class Agent {
     - double y
     - double vx
     - double vy
+    - double leftAccel
+    - double rightAccel
     + void move()
+    - void changeVelocity()
+    - void setAcceleration()
 }
 
 @enduml
