@@ -42,6 +42,6 @@ The environment contains several disjoint polygonal obstacles and a specific goa
 static environment and reach the goal. The image-1 below shows a possible scenario of the environment with the swarm of 
 agents at the start location and goal with a red color circle.
 
-![Swarm Scenario](assets/scenario.png)
+![Swarm Scenario](scenario.png)
 
 Image-1: An environment with the swarm of agents at the start location and goal with a red circle
