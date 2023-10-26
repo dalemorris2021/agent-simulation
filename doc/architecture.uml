@@ -1,0 +1,11 @@
+@startuml
+
+class Agent {
+    - double x
+    - double y
+    - double vx
+    - double vy
+    + void move()
+}
+
+@enduml
