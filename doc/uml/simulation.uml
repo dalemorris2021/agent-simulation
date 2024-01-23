@@ -1,28 +1,79 @@
 @startuml
 
-class Main {
-    - ObservableList<Agent> agents
-    - List<Polygon> obstacles
+class Observer implements Runnable {
+    - Agent[] agents
+    - Obstacle[] obstacles
     - Circle goal
-    - GlobalObserver observer
+    - Physics physics
     + {static} void main()
+    + void run()
 }
 
 class Agent {
-    - double x
-    - double y
-    - double vx
-    - double vy
-    - double leftAccel
-    - double rightAccel
-    + void move()
+    ' Location and velocity have x and y components
+    - double[] location
+    - double[] velocity
+    ' Acceleration has left and right components
+    - double[] acceleration
+    - Sensor[] sensors
+
+    + double[] getLocation()
+    - void move()
+    + double[] getVelocity()
     - void changeVelocity()
-    - void setAcceleration()
+    + double[] getAcceleration()
+    + void setAcceleration(double[] acceleration)
+    ' sense() will set knownObstacles to the set of
+    ' obstacles that are within sight of any sensor
+    + Sensor[] getSensors()
+    + void setSensors(Sensor[] sensors)
+    + void sense()
 }
 
-class GlobalObserver {
-    - {static} GlobalObserver singleton
-    + {static} GlobalObserver getInstance()
+class Sensor {
+    - double range
+    - double angularWidth
+    - double frequency
+    
+    + double getRange()
+    + void setRange(double range)
+    + double getAngularWidth()
+    + void setAngularWidth(double angularWidth)
+    + double getFrequency()
+    + void setFrequency(double frequency)
 }
+
+class Obstacle {
+    - Shape shape
+    - double[] location
+
+    + Shape getShape()
+    + void setShape(Shape shape)
+    + double[] getLocation()
+    + void setLocation(double[] location)
+}
+
+class Goal {
+    - Shape shape
+    - double[] location
+
+    + Shape getShape()
+    + void setShape(Shape shape)
+    + double[] getLocation()
+    + void setLocation(double[] location)
+}
+
+class Physics {
+    + double[] calculateAcceleration(double[] agentLocation, 
+    Obstacle[] obstacles, Goal goal)
+}
+
+Observer --|{ Agent : has >
+Observer --o{ Obstacle : has >
+Observer --|| Physics : has >
+
+Agent --|{ Sensor : has >
+Agent --> Obstacle : avoids
+Agent --> Goal : moves toward
 
 @enduml
