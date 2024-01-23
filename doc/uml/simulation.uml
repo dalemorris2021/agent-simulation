@@ -1,0 +1,28 @@
+@startuml
+
+class Main {
+    - ObservableList<Agent> agents
+    - List<Polygon> obstacles
+    - Circle goal
+    - GlobalObserver observer
+    + {static} void main()
+}
+
+class Agent {
+    - double x
+    - double y
+    - double vx
+    - double vy
+    - double leftAccel
+    - double rightAccel
+    + void move()
+    - void changeVelocity()
+    - void setAcceleration()
+}
+
+class GlobalObserver {
+    - {static} GlobalObserver singleton
+    + {static} GlobalObserver getInstance()
+}
+
+@enduml

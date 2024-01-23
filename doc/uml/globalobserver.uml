@@ -1,8 +1,0 @@
-@startuml
-
-class GlobalObserver {
-    - {static} GlobalObserver singleton
-    + {static} GlobalObserver getInstance()
-}
-
-@enduml
