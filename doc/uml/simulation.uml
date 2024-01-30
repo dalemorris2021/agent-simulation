@@ -9,14 +9,18 @@ class Observer implements Runnable {
 }
 
 class Agent {
+    - Shape shape
     ' Location and velocity have x and y components
     - double[] location
     - double[] velocity
     ' Acceleration has left and right components
     - double[] acceleration
     - Sensor[] sensors
+    - Sensor[] knownObstacles
     - Physics physics
 
+    + Shape getShape()
+    + void setShape(Shape shape)
     + double[] getLocation()
     - void move()
     + double[] getVelocity()
