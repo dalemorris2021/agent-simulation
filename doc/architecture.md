@@ -4,13 +4,13 @@
 
 ## Observer
 
-The Observer will watch the simulation and control the flow of operations. It can see all agents, all obstacles, and the goal at all times. It will inform agents about the physics they must obey. When an agent reaches the goal, it will end the simulation.
+The Observer will watch over the simulation. It can see all agents, all obstacles, and the goal at all times. When an agent reaches the goal, it will end the simulation.
 
 ## Agent
 
 An agent has a location, velocity, and acceleration. It's acceleration will depend on the physics of the simulation.
 
-An agent also has an array of sensors. It will periodically check its sensors to avoid obstacles as it moves toward the goal which it can see at all times. It will forget about obstacles that it can no longer see.
+An agent also has an array of sensors. It will periodically check its sensors to avoid obstacles as it moves toward the goal which it can sense at all times. It will forget about obstacles that it can no longer sense.
 
 ## Sensor
 
@@ -26,4 +26,4 @@ The Goal is the destination that the agents must reach before the simulation can
 
 ## Physics
 
-A model of physics will inform the observer of how to control the agents.
+A model of physics will inform the agents of how to move.
