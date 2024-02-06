@@ -1,5 +1,7 @@
 package main.java.edu.iu;
 
+import javafx.scene.shape.Shape;
+
 public class Agent {
     double[] location;
     double[] velocity;

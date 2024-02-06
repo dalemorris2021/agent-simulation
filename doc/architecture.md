@@ -2,9 +2,9 @@
 
 ![Simulation Diagram](./diagrams/simulation.png)
 
-## Observer
+## App
 
-The Observer will watch over the simulation. It can see all agents, all obstacles, and the goal at all times. When an agent reaches the goal, it will end the simulation.
+The App will watch over the simulation. It can see all agents, all obstacles, and the goal at all times. When an agent reaches the goal, it will end the simulation.
 
 ## Agent
 

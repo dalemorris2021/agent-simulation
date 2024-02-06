@@ -1,6 +1,6 @@
 @startuml
 
-class Observer implements Runnable {
+class App implements Runnable {
     - Agent[] agents
     - Obstacle[] obstacles
     - Goal goal
@@ -74,8 +74,8 @@ class Physics {
     + double[] calculateAcceleration(Agent agent)
 }
 
-Observer --|{ Agent : has >
-Observer --o{ Obstacle : has >
+App --|{ Agent : has >
+App --o{ Obstacle : has >
 
 Agent --|{ Sensor : has >
 Agent --> Obstacle : avoids
