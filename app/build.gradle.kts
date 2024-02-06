@@ -30,7 +30,7 @@ application {
 }
 
 tasks.register("diagram") {
-    Runtime.getRuntime().exec("java -jar ./lib/plantuml-gplv2-1.2024.0.jar ./doc/uml/*.uml -o ../diagrams")
+    Runtime.getRuntime().exec("java -jar ./lib/plantuml-gplv2-1.2024.0.jar ./doc/uml/*.puml -o ../diagrams")
 }
 
 tasks.withType<Jar> {
