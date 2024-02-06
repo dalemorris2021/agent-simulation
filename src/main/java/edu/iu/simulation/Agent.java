@@ -1,14 +1,23 @@
-package main.java.edu.iu;
+package edu.iu.simulation;
 
 import javafx.scene.shape.Shape;
 
 public class Agent {
+    Shape shape;
     double[] location;
     double[] velocity;
     double[] acceleration;
     Sensor[] sensors;
     Obstacle[] knownObstacles;
     Physics physics;
+
+    public Shape getShape() {
+        return shape;
+    }
+
+    public void setShape(Shape shape) {
+        this.shape = shape;
+    }
 
     public double[] getLocation() {
         return location;

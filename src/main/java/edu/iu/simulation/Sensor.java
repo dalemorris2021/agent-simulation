@@ -1,4 +1,4 @@
-package main.java.edu.iu;
+package edu.iu.simulation;
 
 public class Sensor {
     double range;

@@ -1,4 +1,6 @@
-package main.java.edu.iu;
+package edu.iu.simulation;
+
+import javafx.scene.shape.Shape;
 
 public class App implements Runnable {
     Agent[] agents;
