@@ -9,7 +9,7 @@ class Observer implements Runnable {
 }
 
 class Agent {
-    - Shape shape
+    Shape shape
     ' Location and velocity have x and y components
     - double[] location
     - double[] velocity

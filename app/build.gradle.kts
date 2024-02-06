@@ -29,6 +29,10 @@ application {
     mainClass.set("edu.iu.simulation.App")
 }
 
+tasks.register("diagram") {
+    Runtime.getRuntime().exec("java -jar ./lib/plantuml-gplv2-1.2024.0.jar ./doc/uml/*.uml -o ../diagrams")
+}
+
 tasks.withType<Jar> {
     manifest {
         attributes["Main-Class"] = application.mainClass
