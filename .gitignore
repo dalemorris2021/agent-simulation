@@ -31,3 +31,6 @@ build
 
 # VSCode configuration
 .vscode
+
+# JetBrains configuration
+.idea
