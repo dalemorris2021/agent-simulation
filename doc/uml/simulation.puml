@@ -1,33 +1,40 @@
 @startuml
 
-class Observer implements Runnable {
+class App implements Runnable {
     - Agent[] agents
     - Obstacle[] obstacles
-    - Circle goal
-    - Physics physics
+    - Goal goal
     + {static} void main()
     + void run()
 }
 
 class Agent {
+    - Shape shape
     ' Location and velocity have x and y components
     - double[] location
     - double[] velocity
     ' Acceleration has left and right components
     - double[] acceleration
     - Sensor[] sensors
+    - Sensor[] knownObstacles
+    - Physics physics
 
+    + Shape getShape()
+    + void setShape(Shape shape)
     + double[] getLocation()
     - void move()
     + double[] getVelocity()
-    - void changeVelocity()
+    - void accelerate()
     + double[] getAcceleration()
-    + void setAcceleration(double[] acceleration)
+    - void setAcceleration(double[] acceleration)
     ' sense() will set knownObstacles to the set of
     ' obstacles that are within sight of any sensor
     + Sensor[] getSensors()
     + void setSensors(Sensor[] sensors)
-    + void sense()
+    + Obstacle[] getKnownObstacles()
+    - void sense()
+    + Physics getPhysics()
+    + void setPhysics(Physics physics)
 }
 
 class Sensor {
@@ -64,16 +71,15 @@ class Goal {
 }
 
 class Physics {
-    + double[] calculateAcceleration(double[] agentLocation, 
-    Obstacle[] obstacles, Goal goal)
+    + double[] calculateAcceleration(Agent agent)
 }
 
-Observer --|{ Agent : has >
-Observer --o{ Obstacle : has >
-Observer --|| Physics : has >
+App --|{ Agent : has >
+App --o{ Obstacle : has >
 
 Agent --|{ Sensor : has >
 Agent --> Obstacle : avoids
 Agent --> Goal : moves toward
+Agent --|{ Physics : obeys
 
 @enduml

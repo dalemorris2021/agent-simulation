@@ -23,11 +23,17 @@
 hs_err_pid*
 replay_pid*
 
-# VS Code
+# VS Code config
 .vscode/*
 
-# IntelliJ
+# IntelliJ config
 .idea/*
 
 # Library
 lib/*
+
+# Gradle config
+.gradle
+
+# Build
+build
