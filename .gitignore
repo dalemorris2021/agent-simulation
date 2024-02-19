@@ -37,3 +37,6 @@ lib/*
 
 # Build
 build/*
+
+# App
+app/*
