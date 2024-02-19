@@ -36,4 +36,4 @@ lib/*
 .gradle
 
 # Build
-build
+build/*
