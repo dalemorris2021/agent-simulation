@@ -17,9 +17,10 @@ repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
+
 javafx {
     version = "21"
-    modules = listOf("javafx.base", "javafx.graphics")
+    modules = listOf("javafx.base", "javafx.graphics", "javafx.controls")
 }
 
 dependencies {
@@ -36,6 +37,7 @@ application {
 }
 
 tasks.register("diagram") {
+    
     Runtime.getRuntime().exec("java -jar ./lib/plantuml-gplv2-1.2024.0.jar ./doc/uml/*.puml -o ../diagrams")
 }
 
